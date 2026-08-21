@@ -11,6 +11,7 @@ These skills are for **every group**. You do not need a Talent Mapping or Pulse 
 | `hr-workshop-mvp-flow` | Student kickoff: read your sheet, confirm up to 5 MVP functions, write the PRD, plan and build the prototype |
 | `prd-writer` | Makes the concept PRD and the detailed PRD more complete |
 | `workshop-local-run` | Checks Node/folder/port and opens the HTML or localhost page. You do not type terminal commands |
+| `html-executive-deck-generation` | Guided 6-step executive deck: CSV/XLSX or text → HTML slides plus Gamma and Kimi prompts (DAYMARK visual system) |
 
 ## Install in Cursor (students)
 
@@ -22,7 +23,7 @@ Do **one** of the two options. Option A is enough for class.
 2. Unzip it. You should see a folder named `hr-workshop-mvp-skills`.
 3. Open Cursor.
 4. **File → Open Folder…** and choose that `hr-workshop-mvp-skills` folder.
-5. Confirm the skills loaded: in Cursor, open **Customize** in the sidebar → **Skills**. You should see the three names above.
+5. Confirm the skills loaded: in Cursor, open **Customize** in the sidebar → **Skills**. You should see the names in the table above.
 6. In **Agent** chat, say:
 
 ```text
@@ -44,11 +45,12 @@ npx skills add konig123/hr-workshop-mvp-skills --agent cursor --global
 **If you prefer to copy folders by hand:**
 
 1. Finish Option A so the unzipped folder is on your computer.
-2. Copy these three folders:
+2. Copy these folders:
 
    - `.cursor/skills/hr-workshop-mvp-flow`
    - `.cursor/skills/prd-writer`
    - `.cursor/skills/workshop-local-run`
+   - `.cursor/skills/html-executive-deck-generation`
 
 3. Paste them into your user skills folder:
 
@@ -76,6 +78,6 @@ Do **not** add Group 4 / Group 6 wrapper skills unless the instructor asks. This
 
 ## For instructors
 
-This repository is public on purpose. It contains only skill markdown. No API keys, student work, or `.env` files.
+This repository is public on purpose. It contains skill markdown plus DAYMARK logo/mood-board images used by `html-executive-deck-generation`. No API keys, student work, or `.env` files.
 
 If you update a skill locally, copy the changed folder back into `.cursor/skills/` here and open a pull request.
