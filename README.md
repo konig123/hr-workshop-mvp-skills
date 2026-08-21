@@ -1,6 +1,6 @@
 # HR Workshop MVP Skills
 
-Cursor skills for the HR workshop: take a filled brainstorm sheet to a PRD, an HTML prototype, a Next.js MVP, and a local browser preview.
+Cursor skills for the HR workshop: take a filled brainstorm sheet to a PRD, a confirmed build slice, an HTML prototype, and one working path in the local browser.
 
 These skills are for **every group**. You do not need a Talent Mapping or Pulse Survey wrapper.
 
@@ -8,7 +8,7 @@ These skills are for **every group**. You do not need a Talent Mapping or Pulse 
 
 | Skill | What it does |
 |---|---|
-| `hr-workshop-mvp-flow` | Student kickoff: read your sheet, confirm up to 5 MVP functions, write the PRD, plan and build the prototype |
+| `hr-workshop-mvp-flow` | Student kickoff: read your sheet, confirm up to 5 MVP functions, lock today's build slice, write the PRD, and build only that slice |
 | `prd-writer` | Makes the concept PRD and the detailed PRD more complete |
 | `workshop-local-run` | Checks Node/folder/port and opens the HTML or localhost page. You do not type terminal commands |
 | `html-executive-deck-generation` | Guided 6-step executive deck: CSV/XLSX or text → HTML slides plus Gamma and Kimi prompts (DAYMARK visual system) |
@@ -67,7 +67,7 @@ npx skills add konig123/hr-workshop-mvp-skills --agent cursor --global
 1. Open Cursor on this repo (Option A) or on your project folder (Option B).
 2. Open **Agent** chat (not Ask).
 3. Say `Start the HR workshop` and attach your filled brainstorm sheet.
-4. Confirm each step when the agent asks. Do not skip “are these the final MVP functions?”
+4. Confirm each step when the agent asks. Do not skip “are these the final MVP functions?” or the **Build Slice** card (one user, one happy path, what is not in this build). The session builds the slice, not the full MVP list.
 5. When it is time to open the prototype, let the agent run the computer checks. You should not type `npm` or `localhost` yourself.
 
 ## What not to install
