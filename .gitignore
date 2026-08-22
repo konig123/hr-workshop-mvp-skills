@@ -11,3 +11,7 @@ credentials.json
 .npmrc
 .cursor/mcp.json
 node_modules/
+.venv/
+.mplconfig/
+__pycache__/
+*.pyc

@@ -1,8 +1,10 @@
-# Step 2 ó Chart Plan
+# Step 2 ù Chart Plan
 
 Map Step 1 insights to visuals for **HTML, Gamma, and Kimi**.
 
-**Input:** Insight Brief from Step 1.
+**Input:** Insight Brief from Step 1 **and** Python `metrics.json` / chart PNGs from Step 0.
+
+Copy `kpiValues` and `charts[].rows` from the JSON. Do not recompute means, ranks, or percentages.
 
 ## Chart catalog
 
@@ -13,13 +15,13 @@ Map Step 1 insights to visuals for **HTML, Gamma, and Kimi**.
 | KPI cards (3) | Headline metrics | `.kpi-panel` |
 | Gap bars | Compare dimensions | `.gap-chart` / `.gap-fill` |
 | Risk % bars | % at-risk | `.risk-chart` / `.risk-fill` |
-| Heatmap | Segment ◊ dimension | `.heatmap` |
+| Heatmap | Segment ù dimension | `.heatmap` |
 | Dot plot | Two metrics per entity | `.dotplot` |
 | Scope list | Methodology, agenda | `.scope-grid` |
 | Action cards | Recommendations | `.action-grid` |
 | Timeline | Year milestones | `.timeline-banner` or custom |
 
-### Gamma / Kimi (describe in prompt ó tool renders chart)
+### Gamma / Kimi (describe in prompt ù tool renders chart)
 
 | Chart type | Best for |
 |------------|----------|
@@ -34,10 +36,11 @@ Pick charts that match **data type** (survey vs year-end narrative). Prefer ?6 d
 
 ## Chart math (HTML / shared numbers)
 
-- Survey scale 1ñ5: bar width `(score/5)◊100%`; benchmark 3.0 at **60%**
+- Survey scale 1ù5: bar width `(score/5)ù100%`; benchmark 3.0 at **60%**
 - Heatmap cells: **44px** height
-- Dot position: `((score?1)/4)◊100%`
-- Percentages: use explicit % from data or computed count/n
+- Dot position: `((score?1)/4)ù100%`
+- Percentages: use values already in `metrics.json` (never count/n in the LLM)
+- Pulse PNG / generic `charts/CH-*.png`: may be referenced as exhibits; HTML still redraws from JSON numbers
 
 ## Agent output format
 
@@ -50,9 +53,9 @@ Pick charts that match **data type** (survey vs year-end narrative). Prefer ?6 d
 ### B. Detailed spec per chart
 
 ```
-CH-XX ó [type]
+CH-XX ù [type]
 Platforms: HTML | Gamma | Kimi | all
-Data source: [column / text quote / computed]
+Data source: [metrics.json path + field / text quote]
 Rows / data points:
   - Label | value | display format
 Callout stat: [bold number + sentence]
@@ -61,7 +64,7 @@ Why this chart: [1 line]
 
 ### C. Charts excluded
 
-2ñ3 rejected ideas and why.
+2ù3 rejected ideas and why.
 
 ### D. Data blocks (for Step 6)
 
@@ -74,4 +77,4 @@ Why this chart: [1 line]
 }
 ```
 
-End with: **CHART PLAN COMPLETE ó ready for Step 3 (storyline)**
+End with: **CHART PLAN COMPLETE ù ready for Step 3 (storyline)**

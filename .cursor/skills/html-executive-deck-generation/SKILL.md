@@ -30,15 +30,15 @@ Arguments passed: `$ARGUMENTS`
 
 | Type | Examples | Agent behavior |
 |------|----------|----------------|
-| **Structured file** | CSV, XLSX | Compute metrics; cite exact numbers |
-| **Free text** | Pasted brief, bullet notes, year-end narrative, email draft | Extract facts, metrics, themes; **never invent numbers** ? mark missing data as `[TBD]` or ask user |
-| **Mixed** | Text + partial table | Prefer file for numbers; text for context |
+| **Structured file** | CSV, XLSX | Run **Python** first ([python-metrics.md](references/python-metrics.md)); cite only `metrics.json` |
+| **Free text** | Pasted brief, bullet notes, year-end narrative, email draft | Extract facts, metrics, themes; **never invent numbers** — mark missing data as `[TBD]` or ask user |
+| **Mixed** | Text + partial table | Python on the file for numbers; text for context |
 
 ### Session opener
 
 ```text
 I'll build your presentation in 6 steps:
-1 Insights → 2 Charts → 3 Storyline → 4 DAYMARK mood board → 5 Layout reference (optional PDF/PPTX) → 6 Outputs (HTML + Gamma + Kimi)
+0 Python metrics (CSV/XLSX only) → 1 Insights → 2 Charts → 3 Storyline → 4 DAYMARK mood board → 5 Layout reference (optional PDF/PPTX) → 6 Outputs (HTML + Gamma + Kimi)
 
 Visual system: DAYMARK (locked). At Step 5 you may attach a deck as 排版 reference only — colors and logo stay DAYMARK.
 
@@ -69,6 +69,7 @@ Brand override only if the user explicitly says **replace DAYMARK** or **use HR 
 
 | Step | Name | Output | Reference |
 |------|------|--------|-----------|
+| 0 | Python metrics (CSV/XLSX) | `metrics.json` + chart PNGs | [python-metrics.md](references/python-metrics.md) · sibling `pulse-survey-analysis` |
 | 1 | Insight analysis | Insight Brief | [step1-insight-analysis.md](references/step1-insight-analysis.md) |
 | 2 | Chart plan | Chart Plan + data JSON | [step2-chart-plan.md](references/step2-chart-plan.md) |
 | 3 | Storyline | Storyline Plan (SCQA) | [step3-storyline.md](references/step3-storyline.md) |
@@ -105,11 +106,12 @@ Hard constraints: 1280×720, no emoji (SVG only), UTF-8, print-safe KPIs.
 
 ## Orchestration rules
 
-1. Extract insights from **file or text** ? do not fabricate metrics.
-2. One step at a time; 3-line summary + "Proceed to Step N?" between steps.
-3. Carry all artifacts forward into Deck Build Brief (Step 5).
-4. No HTML / Gamma / Kimi output before Step 6.
-5. Gamma and Kimi prompts use **same storyline and numbers** as HTML, DAYMARK paint, and Step 5 排版.
+1. Extract insights from **file or text** — do not fabricate metrics.
+2. For every CSV/XLSX: run Python (pulse runner or `compute_deck_metrics.py`) **before** Step 1. Never average, rank, or % change a file in the LLM.
+3. One step at a time; 3-line summary + "Proceed to Step N?" between steps.
+4. Carry Python `metrics.json` + all artifacts forward into Deck Build Brief (Step 5).
+5. No HTML / Gamma / Kimi output before Step 6.
+6. Gamma and Kimi prompts use **same storyline and numbers** as HTML (copied from Python JSON), DAYMARK paint, and Step 5 排版.
 
 ---
 
@@ -117,9 +119,9 @@ Hard constraints: 1280×720, no emoji (SVG only), UTF-8, print-safe KPIs.
 
 | User request | Input | Template |
 |--------------|-------|----------|
-| Pulse survey deck | CSV | DAYMARK paint; optional McKinsey-style PDF at Step 5 for 排版 |
+| Pulse survey deck | CSV | Python via `pulse-survey-analysis`; DAYMARK paint; optional layout PDF at Step 5 |
 | Year-end performance | Pasted narrative | DAYMARK paint; optional company PPTX at Step 5 for 排版 |
-| Board briefing | XLSX + bullets | DAYMARK paint; optional brand PDF at Step 5 for 排版 |
+| Board briefing | XLSX + bullets | Python via `compute_deck_metrics.py`; DAYMARK paint; optional brand PDF at Step 5 |
 
 ---
 
@@ -127,7 +129,7 @@ Hard constraints: 1280×720, no emoji (SVG only), UTF-8, print-safe KPIs.
 
 | User says | Action |
 |-----------|--------|
-| CSV or text only | Step 1; DAYMARK at Step 4; at Step 5 ask for optional layout PDF |
+| CSV or text only | CSV/XLSX: Python Step 0 then Step 1. Text-only: Step 1 extract. DAYMARK at Step 4; at Step 5 ask for optional layout PDF |
 | "Run all" | Steps 1–5 inline; skip layout reference if none attached; do not block |
 | "HTML only" | Still produce Gamma/Kimi prompts unless user explicitly opts out |
 | "Skip to slides" | Refuse without Steps 1?5 artifacts |
@@ -137,5 +139,5 @@ Hard constraints: 1280×720, no emoji (SVG only), UTF-8, print-safe KPIs.
 
 ## Related skills
 
-- `pulse-survey-analysis` — deeper analytics report before Step 1
+- `pulse-survey-analysis` — **required** Python math + PNG/PDF for pulse/engagement CSVs (`EmpID`, `Manager`, Q1–Q20). Bundled in this repo.
 - `lecture-course-design-guideline` — JSON brand spec only if user rejects DAYMARK and has no other template

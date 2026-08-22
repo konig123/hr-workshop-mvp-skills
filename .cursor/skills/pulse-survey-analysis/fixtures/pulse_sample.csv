@@ -1,0 +1,5 @@
+EmpID,Department,Manager,Q1_Manager_Leadership,Q2_Manager_Leadership,Q3_Manager_Leadership,Q4_Manager_Leadership,Q5_Manager_Leadership,Q6_Manager_Leadership,Q7_Manager_Leadership,Q8_Manager_Leadership,Q9_Manager_Leadership,Q10_Manager_Leadership,Q11_DeptHead_Vision,Q12_DeptHead_Strategy,Q13_DeptHead_Accessibility,Q14_Team_Goal_Clarity,Q15_Team_Collaboration,Q16_Team_Resources,Q17_Team_Efficiency,Q18_Engagement_Pride,Q19_Engagement_Retention,Q20_Engagement_Referral
+E1,Sales,Ada,5,5,4,5,4,5,4,5,5,4,4,4,3,4,4,3,3,5,4,4
+E2,Sales,Ada,4,4,4,5,4,4,4,4,4,4,4,3,3,4,4,3,3,4,4,3
+E3,Eng,Ben,3,3,4,3,3,3,4,3,3,3,4,4,4,5,5,4,4,4,4,4
+E4,Eng,Ben,2,3,3,3,2,3,3,3,3,3,4,4,5,5,4,4,4,3,3,3

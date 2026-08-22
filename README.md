@@ -11,7 +11,8 @@ These skills are for **every group**. You do not need a Talent Mapping or Pulse 
 | `hr-workshop-mvp-flow` | Student kickoff: read your sheet, confirm up to 5 MVP functions, lock today's build slice, write the PRD, and build only that slice |
 | `prd-writer` | Makes the concept PRD and the detailed PRD more complete |
 | `workshop-local-run` | Checks Node/folder/port and opens the HTML or localhost page. You do not type terminal commands |
-| `html-executive-deck-generation` | Guided 6-step executive deck: CSV/XLSX or text → HTML slides plus Gamma and Kimi prompts (DAYMARK visual system) |
+| `html-executive-deck-generation` | Guided 6-step executive deck: CSV/XLSX or text → HTML slides plus Gamma and Kimi prompts (DAYMARK visual system). File numbers come from Python, not the LLM |
+| `pulse-survey-analysis` | Python pulse/engagement survey math (PDF + PNG + `metrics.json`). Required before a pulse CSV becomes a deck |
 
 ## Install in Cursor (students)
 
@@ -51,6 +52,7 @@ npx skills add konig123/hr-workshop-mvp-skills --agent cursor --global
    - `.cursor/skills/prd-writer`
    - `.cursor/skills/workshop-local-run`
    - `.cursor/skills/html-executive-deck-generation`
+   - `.cursor/skills/pulse-survey-analysis`
 
 3. Paste them into your user skills folder:
 
@@ -78,6 +80,6 @@ Do **not** add Group 4 / Group 6 wrapper skills unless the instructor asks. This
 
 ## For instructors
 
-This repository is public on purpose. It contains skill markdown plus DAYMARK logo/mood-board images used by `html-executive-deck-generation`. No API keys, student work, or `.env` files.
+This repository is public on purpose. It contains skill markdown, DAYMARK logo/mood-board images, and Python report/metrics scripts (no student data). No API keys or `.env` files.
 
 If you update a skill locally, copy the changed folder back into `.cursor/skills/` here and open a pull request.
