@@ -69,10 +69,11 @@ Reference example: `HRBP/pulse_survey_eng/verify-screenshots/`
 
 ## F. Data accuracy spot-check
 
-- [ ] KPI numbers match CSV analysis
-- [ ] Bar widths match formula `(score/5)*100%`
-- [ ] At-risk percentages match defined threshold
-- [ ] Insight callout stats match computed values
+- [ ] KPI numbers match Python `metrics.json` (`kpiValues`) — not LLM mental math
+- [ ] Bar / heatmap / ranking values match JSON `charts[].rows` or `rankings`
+- [ ] Bar widths match formula `(score/5)*100%` when the JSON score is 1–5
+- [ ] At-risk percentages match defined threshold **and** JSON
+- [ ] Insight callout stats match `metrics.json`
 - [ ] No placeholder lorem or `[TBD]` in executive deck
 
 ## G. Sign-off template

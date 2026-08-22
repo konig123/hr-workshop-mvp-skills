@@ -1,24 +1,26 @@
-# Step 1 ó Insight Analysis
+# Step 1 ù Insight Analysis
 
 Produce an **Insight Brief** only. No charts, slides, layout, or output files.
 
 ## Input modes
 
-### Mode A ó Structured file (CSV / XLSX)
+### Mode A ù Structured file (CSV / XLSX)
 
-1. Read file; infer scale, dimensions, segments.
-2. Compute aggregates; cite exact numbers.
+1. Run Python first ù [python-metrics.md](python-metrics.md). Do not calculate aggregates in the LLM.
+2. Pulse-shaped files (`Manager` / `People Leader` + Q1ùQ20): `pulse-survey-analysis` runner with `--json-out`.
+3. Any other CSV/XLSX: `scripts/compute_deck_metrics.py`.
+4. Build this brief **only** from `metrics.json` (+ chart PNG paths). Infer scale/segments from JSON fields, not by re-summing the file.
 
-### Mode B ó Free text (pasted narrative, bullets, notes)
+### Mode B ù Free text (pasted narrative, bullets, notes)
 
 1. Parse for: topic, period, audience, achievements, challenges, KPIs, headcount, programs, risks, recommendations.
 2. Extract every number explicitly stated; label source quote.
 3. **Do not invent metrics.** If a metric is implied but not quantified, list under data gaps as `[TBD]`.
 4. For year-end performance text: identify themes (talent, engagement, L&D, recruitment, compliance, budget, etc.).
 
-### Mode C ó Mixed
+### Mode C ù Mixed
 
-Use file for numbers; text for narrative framing and priorities.
+Use Python `metrics.json` for numbers; text for narrative framing and priorities.
 
 ## Agent output format
 
@@ -26,6 +28,7 @@ Use file for numbers; text for narrative framing and priorities.
 
 - Input type: file / text / mixed
 - Source: [filename or "user pasted text"]
+- Python metrics: [path to metrics.json, or N/A for text-only]
 - Deck topic inferred: [e.g. HR Year-End Performance 2025]
 - Language: [en / zh / etc.]
 
@@ -47,7 +50,7 @@ Use file for numbers; text for narrative framing and priorities.
 
 | Metric | Value | Source | So what? |
 |--------|-------|--------|----------|
-| | | text line / column / computed | |
+| | | metrics.json field / text line | |
 
 Adapt rows to content type (survey scores vs year-end HR KPIs vs qualitative themes).
 
@@ -59,13 +62,13 @@ Adapt rows to content type (survey scores vs year-end HR KPIs vs qualitative the
 
 ### F. Insight hierarchy (ranked, exactly 5)
 
-1. [Insight] ó evidence: [number or quote]
-2. Ö
-5. Ö
+1. [Insight] ù evidence: [number or quote]
+2. ù
+5. ù
 
 ### G. Narratives to avoid
 
-2ñ3 misleading stories this content could be misread as.
+2ù3 misleading stories this content could be misread as.
 
 ### H. Open questions / data gaps
 
@@ -74,7 +77,7 @@ Missing numbers or clarifications needed before charts.
 ## Defaults (if user did not specify)
 
 - Audience: senior leadership / CHRO
-- Deck length target: 8ñ12 slides, ~10 minutes
-- Scale: 1ñ5 only when survey data present
+- Deck length target: 8ù12 slides, ~10 minutes
+- Scale: 1ù5 only when survey data present
 
-End with: **INSIGHT BRIEF COMPLETE ó ready for Step 2 (chart planning)**
+End with: **INSIGHT BRIEF COMPLETE ù ready for Step 2 (chart planning)**
