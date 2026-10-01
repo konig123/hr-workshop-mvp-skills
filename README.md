@@ -13,6 +13,8 @@ These skills are for **every group**. You do not need a Talent Mapping or Pulse 
 | `workshop-local-run` | Checks Node/folder/port and opens the HTML or localhost page. You do not type terminal commands |
 | `html-executive-deck-generation` | Guided 6-step executive deck: CSV/XLSX or text → HTML slides plus Gamma and Kimi prompts (DAYMARK visual system). File numbers come from Python, not the LLM |
 | `pulse-survey-analysis` | Python pulse/engagement survey math (PDF + PNG + `metrics.json`). Required before a pulse CSV becomes a deck |
+| `jd-draft-salary-research` | Drafts Ashby-style JDs from a brief, auto-saves markdown, and benchmarks market pay against primary recruiter guides (Robert Half, Morgan McKinley, Michael Page, Jobsdb, Randstad) with an interactive Canvas |
+| `linkedin-candidate-search` | Takes a JD and hiring requirements to search public LinkedIn, ranks a shortlist against weighted criteria, and generates an interactive Canvas candidate review dashboard |
 
 ## Install in Cursor (students)
 
@@ -53,6 +55,8 @@ npx skills add konig123/hr-workshop-mvp-skills --agent cursor --global
    - `.cursor/skills/workshop-local-run`
    - `.cursor/skills/html-executive-deck-generation`
    - `.cursor/skills/pulse-survey-analysis`
+   - `.cursor/skills/jd-draft-salary-research`
+   - `.cursor/skills/linkedin-candidate-search`
 
 3. Paste them into your user skills folder:
 
