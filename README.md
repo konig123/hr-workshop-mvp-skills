@@ -15,6 +15,7 @@ These skills are for **every group**. You do not need a Talent Mapping or Pulse 
 | `pulse-survey-analysis` | Python pulse/engagement survey math (PDF + PNG + `metrics.json`). Required before a pulse CSV becomes a deck |
 | `jd-draft-salary-research` | Drafts Ashby-style JDs from a brief, auto-saves markdown, and benchmarks market pay against primary recruiter guides (Robert Half, Morgan McKinley, Michael Page, Jobsdb, Randstad) with an interactive Canvas |
 | `linkedin-candidate-search` | Takes a JD and hiring requirements to search public LinkedIn, ranks a shortlist against weighted criteria, and generates an interactive Canvas candidate review dashboard |
+| `minimax-audio-generator` | Self-guarding MiniMax voiceover generator (MP3): automatically creates safe `.env.local` + `.gitignore` so students never paste API keys into chat. Supports Cantonese (粵語), English, and Mandarin |
 
 ## Install in Cursor (students)
 
@@ -57,6 +58,7 @@ npx skills add konig123/hr-workshop-mvp-skills --agent cursor --global
    - `.cursor/skills/pulse-survey-analysis`
    - `.cursor/skills/jd-draft-salary-research`
    - `.cursor/skills/linkedin-candidate-search`
+   - `.cursor/skills/minimax-audio-generator`
 
 3. Paste them into your user skills folder:
 
