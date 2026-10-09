@@ -17,6 +17,7 @@ These skills are for **every group**. You do not need a Talent Mapping or Pulse 
 | `linkedin-candidate-search` | Takes a JD and hiring requirements to search public LinkedIn, ranks a shortlist against weighted criteria, and generates an interactive Canvas candidate review dashboard |
 | `minimax-audio-generator` | Self-guarding MiniMax voiceover generator (MP3): automatically creates safe `.env.local` + `.gitignore` so students never paste API keys into chat. Supports Cantonese (粵語), English, and Mandarin |
 | `remotion-onboarding-video` | Automated slide-to-video onboarding generator with Remotion: environment checks & auto-setup, MiniMax Cantonese voiceover with 3 male & 3 female voice choices, tiered video durations, and custom slide replacement |
+| `video-transcript-storyboard` | Builds an editable bilingual (EN + Traditional Chinese) HTML storyboard from a video transcript, with per-scene Descript prompts and MiniMax TTS script columns |
 
 ## Install in Cursor (students)
 
@@ -61,6 +62,7 @@ npx skills add konig123/hr-workshop-mvp-skills --agent cursor --global
    - `.cursor/skills/linkedin-candidate-search`
    - `.cursor/skills/minimax-audio-generator`
    - `.cursor/skills/remotion-onboarding-video`
+   - `.cursor/skills/video-transcript-storyboard`
 
 3. Paste them into your user skills folder:
 
