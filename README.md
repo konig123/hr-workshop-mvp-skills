@@ -21,6 +21,7 @@ These skills are for **every group**. You do not need a Talent Mapping or Pulse 
 | `image-region-picker` | Opens a local page so you can click four points on an image. The agent then edits only that region and leaves every other pixel unchanged |
 | `power-automate-flow-builder` | Teaches a beginner to build any Power Automate cloud flow from their own goal, one designer card at a time, and debug it from a screenshot or error |
 | `mood-board-extract` | Reads a PPT template, brand PDF, or screenshots and locks font, point size, image style, and hex colours. Python measures the colours; the agent only names the roles |
+| `presentation-decision-coach` | Coaches a decision presentation in stages: intake brief, SCQA, action-title storyline, storyboard, then a deck or a complete handoff. The student approves each artifact before the next stage |
 
 ## Install in Cursor (students)
 
@@ -69,6 +70,7 @@ npx skills add konig123/hr-workshop-mvp-skills --agent cursor --global
    - `.cursor/skills/image-region-picker`
    - `.cursor/skills/power-automate-flow-builder`
    - `.cursor/skills/mood-board-extract`
+   - `.cursor/skills/presentation-decision-coach`
 
 3. Paste them into your user skills folder:
 
