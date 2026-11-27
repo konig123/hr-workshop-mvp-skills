@@ -19,6 +19,7 @@ These skills are for **every group**. You do not need a Talent Mapping or Pulse 
 | `remotion-onboarding-video` | Automated slide-to-video onboarding generator with Remotion: environment checks & auto-setup, MiniMax Cantonese voiceover with 3 male & 3 female voice choices, tiered video durations, and custom slide replacement |
 | `video-transcript-storyboard` | Builds an editable bilingual (EN + Traditional Chinese) HTML storyboard from a video transcript, with per-scene Descript prompts and MiniMax TTS script columns |
 | `image-region-picker` | Opens a local page so you can click four points on an image. The agent then edits only that region and leaves every other pixel unchanged |
+| `power-automate-flow-builder` | Teaches a beginner to build any Power Automate cloud flow from their own goal, one designer card at a time, and debug it from a screenshot or error |
 
 ## Install in Cursor (students)
 
@@ -65,6 +66,7 @@ npx skills add konig123/hr-workshop-mvp-skills --agent cursor --global
    - `.cursor/skills/remotion-onboarding-video`
    - `.cursor/skills/video-transcript-storyboard`
    - `.cursor/skills/image-region-picker`
+   - `.cursor/skills/power-automate-flow-builder`
 
 3. Paste them into your user skills folder:
 
